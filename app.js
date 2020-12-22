@@ -6,7 +6,7 @@ class App {
     constructor(app) {
         this.app = app 
         
-        //inicializações
+        // Inicializações
         this._configRoutes()
     }
 
