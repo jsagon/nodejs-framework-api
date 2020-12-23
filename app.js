@@ -1,27 +1,37 @@
+require('./src/bootstrap/init_features')
+
+const RoutesRegister = require('./src/bootstrap/routes')
+
 const express = require('express') 
 const app = express()
 
 class App {
 
     constructor(app) {
-        this.app = app 
+        this._app = app 
         
-        // Inicializações
-        this._configRoutes()
+        // Inicializações e configurações
+        this._configure()
+        this._registerRoutes()
+    }
+
+    _configure() {
+        this._app.use(express.json())
     }
 
     /**
      * Inicializa a configuração das rotas da aplicação
      */
-    _configRoutes () {
-        this.app.get('/', (req, res) => res.send('teste'))
+    _registerRoutes () {
+        const routesRegister = new RoutesRegister(this._app)
+        routesRegister.load()
     }
 
     /**
      * Inicializa o servidor
      */
     start() {
-        this.app.listen(process.env.PORT, () => {
+        this._app.listen(process.env.PORT, () => {
             console.log('Server online')
         })
     }
