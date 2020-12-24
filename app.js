@@ -1,6 +1,7 @@
 require('./src/bootstrap/init_features')
 
 const RoutesRegister = require('./src/bootstrap/routes')
+const Handles = require('./src/bootstrap/handles')
 
 const express = require('express') 
 const app = express()
@@ -13,18 +14,7 @@ class App {
         // Inicializações e configurações
         this._configure()
         this._registerRoutes()
-    }
-
-    _configure() {
-        this._app.use(express.json())
-    }
-
-    /**
-     * Inicializa a configuração das rotas da aplicação
-     */
-    _registerRoutes () {
-        const routesRegister = new RoutesRegister(this._app)
-        routesRegister.load()
+        this._registerHandles()
     }
 
     /**
@@ -35,6 +25,29 @@ class App {
             console.log('Server online')
         })
     }
+
+    /**
+     * Configurações base do express
+     */
+    _configure() {
+        this._app.use(express.json())
+    }
+
+    /**
+     * Inicializa a configuração das rotas da aplicação
+     */
+    _registerRoutes() {
+        const routesRegister = new RoutesRegister(this._app)
+        routesRegister.load()
+    }
+
+    /**
+     * 
+     */
+    _registerHandles() {
+        new Handles(this._app).all()
+    }
+    
 }
 
 const appInstance = new App(app)

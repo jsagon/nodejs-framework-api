@@ -8,6 +8,7 @@ class Auth {
 const auth = async (req, res, next) => {
     try {
         const authorization = req.header('Authorization')
+        
         if(!authorization) throw new Error('Necessário autenticação')
 
         const token = authorization.replace('Bearer ', '')

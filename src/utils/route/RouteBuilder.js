@@ -11,7 +11,27 @@ const RouterBuilder = class {
 		this._current_uri = null
 		this._current_action = null
 	}
-	 
+	
+	setRouter = (router) => {
+		this._router = router
+		return this
+	}
+
+	setBaseMiddlewares = (middlewares) => {
+		this._middlewares = middlewares
+		return this
+	}
+
+	setBaseController = (controller) => {
+		this._controller = controller
+		return this
+	}
+
+	setBaseUri = (uri) => {
+		this._uri_base = uri
+		return this
+	}
+
 	get = (params) => {
 		this._registerRoute('get', params)
 		return this
@@ -46,7 +66,15 @@ const RouterBuilder = class {
 		let routesConfig = [uri]
 		routesConfig = this._manageMiddlewares(routesConfig)
 				
-		routesConfig.push(async (...p) => (new this._controller())[action](...p))
+		routesConfig.push(async (...p) => {
+			try {
+				await (new this._controller())[action](...p)
+			}
+			catch(e) {
+				e.httpStatusCode = 500
+				return p[2](e) // next
+			}
+		})
 
 		this._router[typeRequest](...routesConfig)
 	}
