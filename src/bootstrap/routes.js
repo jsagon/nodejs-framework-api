@@ -1,4 +1,5 @@
 const UserRoutes = require('../modules/User/Config/Routes')
+const TaskRoutes = require('../modules/Task/Config/Routes')
 
 class RoutesRegister {
         
@@ -23,7 +24,8 @@ class RoutesRegister {
      */
     getRoutesRegistered() {
         return [
-            UserRoutes
+            UserRoutes,
+            TaskRoutes
         ]
     }
 

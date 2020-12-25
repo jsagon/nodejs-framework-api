@@ -5,6 +5,9 @@ const jwt = require('jsonwebtoken')
 const CustomError = require('../../../utils/error/CustomError')
 const { onPostSaveError } = require('../../../utils/error/HandleMongooseError')
 
+console.log(process.env.NODE_PATH)
+console.log(process.cwd())
+
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -32,6 +35,8 @@ const userSchema = new mongoose.Schema({
             required: true
         }
     }]
+}, {
+    timestamps: true
 })
 
 userSchema.pre('save', async function(next) {
