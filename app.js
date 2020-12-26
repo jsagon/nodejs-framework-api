@@ -47,7 +47,11 @@ class App {
         new Handles(this._app).all()
     }
     
+    getApp() {
+        return this._app
+    }
 }
 
 const appInstance = new App(app)
-appInstance.start()
+
+export default appInstance

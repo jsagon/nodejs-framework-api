@@ -1,3 +1,5 @@
+import CustomError from "../error/CustomError"
+
 const RouterBuilder = class {
 	
 	constructor (router, uriBase, controller, middlewares) {
@@ -71,7 +73,7 @@ const RouterBuilder = class {
 				await (new this._controller())[action](...p)
 			}
 			catch(e) {
-				e.httpStatusCode = 500
+				e.httpStatusCode = (e instanceof CustomError) ? 400 : 500
 				return p[2](e) // next
 			}
 		})
