@@ -4,6 +4,7 @@
   "description": "Gerenciador de tarefas - api com autenticação de usuário ",
   "main": "app.js",
   "scripts": {
+    "start": "node --es-module-specifier-resolution=node -r server.js",
     "dev": "nodemon --es-module-specifier-resolution=node -r dotenv/config server.js dotenv_config_path=./config/.env ",
     "test": "node  --experimental-vm-modules  node_modules/jest/bin/jest.js  "
   },
