@@ -5,4 +5,3 @@ mongoose.connect(process.env.DATABASE_MAIN, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }) 
- 

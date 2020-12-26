@@ -1,15 +1,11 @@
 import jwt from 'jsonwebtoken'
 import User from '../modules/User/Models/User'
 
-class Auth {
-
-}
-
 const auth = async (req, res, next) => {
     try {
         const authorization = req.header('Authorization')
         
-        if(!authorization) throw new Error('Necessário autenticação')
+        if(!authorization) throw new Error('Autenticação não informada')
 
         const token = authorization.replace('Bearer ', '')
         const tokenData = jwt.verify(token, process.env.JWT_SECRET_KEY)

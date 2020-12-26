@@ -41,12 +41,15 @@ class App {
     }
 
     /**
-     * 
+     * Registra middlewares padrões da aplicação
      */
     _registerHandles() {
         new Handles(this._app).all()
     }
     
+    /**
+     * Retorna instancia express
+     */
     getApp() {
         return this._app
     }

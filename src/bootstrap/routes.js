@@ -1,5 +1,6 @@
 import UserRoutes from '../modules/User/Config/Routes'
 import TaskRoutes from '../modules/Task/Config/Routes'
+import ApplicationRoutes from '../modules/Application/Config/Routes'
 
 class RoutesRegister {
         
@@ -19,11 +20,12 @@ class RoutesRegister {
     }
 
     /**
-     * Recupera a lista de rotas a ser registrada na aplicação
+     * Lista de rotas a ser registrada na aplicação
      * @return array
      */
     getRoutesRegistered() {
         return [
+            ApplicationRoutes,
             UserRoutes,
             TaskRoutes
         ]

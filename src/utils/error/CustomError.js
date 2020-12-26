@@ -1,6 +1,6 @@
 function CustomError(message) {
     this.name = 'CustomError'
-    this.message = message || 'Mensagem de erro padrão'
+    this.message = message || 'Ocorreu um erro'
     this.stack = (new Error()).stack
 }
 CustomError.prototype = Object.create(CustomError.prototype)

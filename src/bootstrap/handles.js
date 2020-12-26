@@ -7,16 +7,17 @@ class Handles {
     }
 
     all = () => {
-        this.error()
+        this.onError()
     }
 
     /**
-     * registro do middleware ultimo de errors
+     * Registro de middleware de erro responsável por assegurar retorno da api 
      */
-    error = () => {
+    onError = () => {
         this._app.use((error, req, res, next) => {
             res.status(error.httpStatusCode)
 
+            // Se for um CustomError significa que foi levantado intencionalmente com mensagem legivel
             if(error instanceof CustomError) {
                 res.send({error:error.message})
             } else {

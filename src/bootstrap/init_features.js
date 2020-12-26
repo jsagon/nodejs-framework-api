@@ -1,1 +1,1 @@
-import '../database/mongodb'
+import '../database/mongodb' // Inicialização do banco de dados
