@@ -1,7 +1,9 @@
-const router = require('express').Router()
-const RouteBuilder = require('../../../utils/route/RouteBuilder')
-const TaskController = require('../Controller/TaskController')
-const authMiddleware = require('../../../middlewares/auth')
+import express from 'express'
+const router = express.Router()
+
+import RouteBuilder from'../../../utils/route/RouteBuilder'
+import TaskController from'../Controller/TaskController'
+import authMiddleware from'../../../middlewares/auth'
 
 new RouteBuilder(router, '/tasks', TaskController, authMiddleware)
     .get()
@@ -10,5 +12,5 @@ new RouteBuilder(router, '/tasks', TaskController, authMiddleware)
     .patch()
     .del()
 
-module.exports = router
+export default router
 

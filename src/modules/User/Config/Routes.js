@@ -1,8 +1,9 @@
-const UserController = require('../Controller/UserController')
-const RouterBuilder = require('../../../utils/route/RouteBuilder')
-const authMiddleware = require('../../../middlewares/auth')
+import UserController from '../Controller/UserController'
+import RouterBuilder from '../../../utils/route/RouteBuilder'
+import authMiddleware from '../../../middlewares/auth'
+import express from 'express'
 
-const router = require('express').Router()
+const router = express.Router()
 
 new RouterBuilder(router, '/users', UserController)
     //sem middleware de autenticação
@@ -16,4 +17,4 @@ new RouterBuilder(router, '/users', UserController)
     .del({uri:'/me', action:'delete'})
     .patch({uri:'/me', action:'update'})
 
-module.exports = router
+export default router

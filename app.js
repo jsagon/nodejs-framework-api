@@ -1,9 +1,8 @@
-require('./src/bootstrap/init_features')
+import './src/bootstrap/init_features'
+import RoutesRegister from './src/bootstrap/routes'
+import Handles from './src/bootstrap/handles'
+import express from 'express'
 
-const RoutesRegister = require('./src/bootstrap/routes')
-const Handles = require('./src/bootstrap/handles')
-
-const express = require('express') 
 const app = express()
 
 class App {

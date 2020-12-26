@@ -1,1 +1,1 @@
-require('../database/mongodb')
+import '../database/mongodb'

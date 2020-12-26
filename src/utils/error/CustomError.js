@@ -6,4 +6,4 @@ function CustomError(message) {
 CustomError.prototype = Object.create(CustomError.prototype)
 CustomError.prototype.constructor = CustomError
 
-module.exports = CustomError
+export default CustomError

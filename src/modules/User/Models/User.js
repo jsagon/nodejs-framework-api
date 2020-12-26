@@ -1,12 +1,9 @@
-const mongoose = require('mongoose')
-const validator = require('validator')
-const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
-const CustomError = require('../../../utils/error/CustomError')
-const { onPostSaveError } = require('../../../utils/error/HandleMongooseError')
-
-console.log(process.env.NODE_PATH)
-console.log(process.cwd())
+import mongoose from 'mongoose'
+import validator from 'validator'
+import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
+import CustomError from '../../../utils/error/CustomError'
+import { onPostSaveError } from '../../../utils/error/HandleMongooseError'
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -87,4 +84,4 @@ userSchema.statics.getEditableFields = function () {
 const User = mongoose.model('User', userSchema)
 
 
-module.exports = User
+export default User

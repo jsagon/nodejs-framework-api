@@ -1,6 +1,6 @@
-const CustomError = require('../../../utils/error/CustomError')
-const Task = require('../Models/Task')
-const escapeStringRegex = require('escape-string-regexp')
+import CustomError from '../../../utils/error/CustomError'
+import Task from '../Models/Task'
+import escapeStringRegex from 'escape-string-regexp'
 
 class TaskController {
 
@@ -61,4 +61,4 @@ class TaskController {
 
 }
 
-module.exports = TaskController
+export default TaskController

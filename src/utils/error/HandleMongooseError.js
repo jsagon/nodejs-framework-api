@@ -22,4 +22,4 @@ const onPostSaveError = function(schema, {labels}) {
     })
 } 
 
-module.exports = {onPostSaveError}
+export {onPostSaveError}

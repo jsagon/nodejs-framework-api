@@ -1,4 +1,4 @@
-const CustomError = require("../utils/error/CustomError")
+import CustomError from "../utils/error/CustomError"
 
 class Handles {
 
@@ -26,4 +26,4 @@ class Handles {
     }
 }
 
-module.exports = Handles
+export default Handles

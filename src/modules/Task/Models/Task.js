@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
 const taskSchema = new mongoose.Schema({
     title: {
@@ -30,4 +30,4 @@ taskSchema.statics.getEditableFields = function () {
 
 const Task = mongoose.model('Task', taskSchema)
 
-module.exports = Task
+export default Task

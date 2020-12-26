@@ -1,5 +1,5 @@
-const jwt = require('jsonwebtoken')
-const User = require('../modules/User/Models/User')
+import jwt from 'jsonwebtoken'
+import User from '../modules/User/Models/User'
 
 class Auth {
 
@@ -27,4 +27,4 @@ const auth = async (req, res, next) => {
     next()
 }
 
-module.exports = auth
+export default auth

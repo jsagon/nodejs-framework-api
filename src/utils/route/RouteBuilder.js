@@ -130,4 +130,4 @@ const RouterBuilder = class {
 	}
 }
 
-module.exports = RouterBuilder
+export default RouterBuilder

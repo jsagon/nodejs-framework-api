@@ -1,5 +1,5 @@
-const UserRoutes = require('../modules/User/Config/Routes')
-const TaskRoutes = require('../modules/Task/Config/Routes')
+import UserRoutes from '../modules/User/Config/Routes'
+import TaskRoutes from '../modules/Task/Config/Routes'
 
 class RoutesRegister {
         
@@ -31,4 +31,4 @@ class RoutesRegister {
 
 }
 
-module.exports = RoutesRegister
+export default RoutesRegister
