@@ -1,9 +1,7 @@
-import './src/bootstrap/init_features'
-import RoutesRegister from './src/bootstrap/routes'
-import Handles from './src/bootstrap/handles'
+import './src/bootstrap/InitFeatures'
+import RoutesRegister from './src/bootstrap/RoutesRegister'
+import Handles from './src/bootstrap/Handles'
 import express from 'express'
-
-const app = express()
 
 class App {
 
@@ -55,6 +53,7 @@ class App {
     }
 }
 
+const app = express()
 const appInstance = new App(app)
 
 export default appInstance

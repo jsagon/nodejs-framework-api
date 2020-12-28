@@ -15,7 +15,7 @@ class Handles {
      */
     onError = () => {
         this._app.use((error, req, res, next) => {
-            res.status(error.httpStatusCode)
+            res.status(error.httpStatusCode || 400)
 
             // Se for um CustomError significa que foi levantado intencionalmente com mensagem legivel
             if(error instanceof CustomError) {
