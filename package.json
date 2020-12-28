@@ -1,7 +1,7 @@
 {
-  "name": "projecttaskmanager",
+  "name": "nodejs-framework-api-jsagon",
   "version": "1.0.0",
-  "description": "Gerenciador de tarefas - api com autenticação de usuário ",
+  "description": "NodeJS Framework API - JSagon",
   "main": "app.js",
   "scripts": {
     "start": "node --es-module-specifier-resolution=node ./server.js",
@@ -12,8 +12,12 @@
     "testEnvironment": "jest-environment-node",
     "transform": {}
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsagon/nodejs-framework-api"
+  },
+  "author": "JSagon - Jhonatan S. Gonçalves",
+  "license": "MIT",
   "type": "module",
   "dependencies": {
     "bcryptjs": "^2.4.3",
