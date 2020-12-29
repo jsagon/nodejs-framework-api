@@ -1,19 +1,20 @@
 # NodeJS Framework API
 
-> Estruturação, helpers e mecanismos que facilitam o desenvolvimento de uma API de fácil e rápida implementação, e completamente customizável.
+> Estrutura, helpers e mecanismos que facilitam o desenvolvimento de uma API de fácil e rápida implementação, e completamente customizável.
 
 <!--Primeiramente, não se trata de um Package a ser instalado como dependência do projeto, mas sim o próprio projeto propriamente dito.
 Obs.: Versão em TypeScript em desenvolvimento, e futuramente com intenção de estruturar como Package npm.-->
 
 ### Sumário
 
-- [Descrição](#description)
-- [Instalação e Configuração](#install-config)
-- [Entendendo a arquitetura](#architecture)
-- [Criando um módulo - Exemplo](#example)
-- [Consumo da API e Demo](#demo)
-- [Futuro e novas funcionalidades](#future)
-- [Autor Info](#author-info)
+- [Descrição](#descrição)
+- [Instalação e Configuração](#instalação-e-configuração)
+- [Entendendo a arquitetura](#entendendo-a-arquitetura)
+- [Criando um módulo - Exemplo](#criando-um-módulo---exemplo)
+- [Consumo da API e Demo](#consumo-da-api-e-demo)
+- [Automação de Testes](#automação-de-testes)
+- [Futuro e novas funcionalidades](#futuro-e-novas-funcionalidades)
+- [Autor Info](#autor-info)
 
 ---
 
@@ -55,7 +56,7 @@ JWT_SECRET_KEY='Insira a sua chave secreta aqui'
 ``` 
 Obs.: O projeto utiliza o MongoDB e Mongoose na implementação de exemplo. Fique a vontade para utilizar outro banco de dados e outras ferramentas como o Sequelize.
 
-Por motivos de segurança, não existe um arquivo específico para ambiente de produção para não correr o risco de envio junto aos arquivos do projeto. Recomendo setar ou criar diretamente no hosting que utilizar. 
+Por motivos de segurança, não existe um arquivo específico para ambiente de produção para não correr o risco de envio junto aos arquivos do projeto. Recomendo setar ou criar diretamente na hospedagem que utilizar. 
 
 #### Inicializando
 
@@ -63,7 +64,7 @@ Por motivos de segurança, não existe um arquivo específico para ambiente de p
 npm run dev
 ```
 
-Se tudo ocorrer bem, será mostrado a mensagem "Server online". Indo a url http://localhost:3000/ você provavelmente verá um retorno da API com informações resumidas da aplicação
+Se tudo ocorrer bem, será mostrado a mensagem "Server online". Indo a url http://localhost:3000/ você provavelmente verá um retorno da API com informações resumidas da aplicação.
 
 Resumo do exemplo de retornado 
 ```
@@ -361,21 +362,41 @@ Obs.: Por necessitar de autenticação, será preciso passar o Token no cabeçal
 
 ---
 
+## Automação de Testes
+
+> Certificar-se de que os recursos foram implementados corretamente nunca é demais ^^
+
+Por padrão, esta framework já vem com uma configuração para testes utilizando o Jest, e uma pasta para os códigos de implementação. Sendo eles na raiz do projeto, ./tests, e um arquivo com testes iniciais ./tests/simple.test.js.
+
+Para executar os testes, utilize o comando a seguir:
+```
+npm test
+```
+
+Provavelmente ao final da execução, você verá o resultado como na imagem seguinte:
+
+![tests](https://user-images.githubusercontent.com/11699360/103250978-64601b80-4955-11eb-9ce8-1c65d573d09c.JPG)
+
+
+---
+
 ## Futuro e novas funcionalidades
 
-Apesar da proposta inicial de ser uma Framework básica, o projeto ainda tem variadas funcionalidades a acrescentar. 
+Apesar da proposta inicial de ser uma Framework básica, o projeto ainda tem variadas funcionalidades para acrescentar. 
 
 Dentre as funcionalidades, estão:
-- Disponibilizar versão em TypeScript.
+- Versão completamente em TypeScript.
 - Registro dos módulos e rotas dinamicamente, removendo a necessidade manual.
+- Arquitetura monorepo para múltiplas aplicações. 
 - Implementação front-end: Views. MVC.
+- Abstração para o Fastify além do já Express.
 
 ---
 
 ## Autor Info
 
 Nome: Jhonatan Gonçalves<br>
-Corp: JSagon<br>
+Alias: JSagon<br>
 Linkedin: https://www.linkedin.com/in/jhonatan-goncalves/<br>
 E-mail: na descrição do github<br>
 
